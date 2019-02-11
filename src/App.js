@@ -1,25 +1,19 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './styles/main.css';
+import Header from './weather/Header';
+import Footer from './weather/Footer';
+import CityCondition from './weather/CityCondition';
+import WeatherChannel from './weather/WeatherChannel';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div class="weather-channel__container">
+        <Header />
+        <WeatherChannel />
+        <Footer />
       </div>
     );
   }
