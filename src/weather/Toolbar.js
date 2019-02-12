@@ -1,21 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import actions from '../actions/actions';
+import {CHANGE_UNIT,changeUnit} from '../actions/actions';
 
 function toolBar(props){
-    const {unit,switchTemp}=props;
-    // console.log(props);
-    // console.log(switchTemp);
-    // console.log(this);
-    console.log(props);
-    console.log(props.changeUnit);
+    const {unit,changeUnit}=props;
+    console.log(changeUnit);
     return (
         <nav>
         <div style={{flex:1}}>
           <input className="search-input" />
           <button className="search-btn"><i className="fa fa-search"></i></button>
   
-          <button className="temp-switch" onClick={props.changeUnit()} >
+          <button className="temp-switch" onClick={changeUnit}>
             <i
               className="fa fa-thermometer-empty"
               aria-hidden="true"
@@ -34,7 +30,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeUnit: () => dispatch(actions.changeUnit()),
+    changeUnit: () => dispatch(changeUnit()),
     // decrease: (...args) => dispatch(actions.decrease(...args))
   }
 }

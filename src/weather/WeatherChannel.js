@@ -5,13 +5,15 @@ import Toolbar from './Toolbar';
 import { connect } from 'react-redux'
 
 class WeatherChannel extends React.Component {
-    constructor(props) {
-        super(props);
-        // this.switchTemp = this.switchTemp.bind(this);
-        // this.state = {}
-    }
+    // constructor(props) {
+    //     super(props);
+    //     // this.switchTemp = this.switchTemp.bind(this);
+    //     // this.state = {}
+    // }
 
     render() {
+        console.log('weathercChannel log');
+        console.log(this.state);
         return (
             
             <React.Fragment>
