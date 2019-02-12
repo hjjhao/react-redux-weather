@@ -2,29 +2,20 @@ import React from 'react';
 import CityCondition from './CityCondition';
 import Forecast from './Forecast';
 import Toolbar from './Toolbar';
+import { connect } from 'react-redux'
 
-export default class WeatherChannel extends React.Component {
+class WeatherChannel extends React.Component {
     constructor(props) {
         super(props);
-        this.switchTemp = this.switchTemp.bind(this);
-        this.state = {
-            condition: {
-
-            },
-            forecast: {
-
-            },
-            unit: 'F'
-
-
-        }
+        // this.switchTemp = this.switchTemp.bind(this);
+        // this.state = {}
     }
 
     render() {
         return (
             
             <React.Fragment>
-                <Toolbar unit={this.state.unit} switchTemp={this.switchTemp} />
+                <Toolbar unit={this.props.unit} />
                 <main>
                     <CityCondition />
                     <Forecast />
@@ -37,15 +28,10 @@ export default class WeatherChannel extends React.Component {
         )
     }
 
-    switchTemp() {
-        console.log(this);
-        if (this.state.unit === 'C')
-            // this.state.unit = 'F';
-            this.setState({ unit: 'F' })
-        else
-            // this.state.unit ='C';
-            this.setState({ unit: 'C' });
-
-        // console.log(this.state.unit)
-    }
 }
+const mapStateToProps = state => ({
+    unit: state.unit
+  })
+
+
+export default connect(mapStateToProps)(WeatherChannel);
