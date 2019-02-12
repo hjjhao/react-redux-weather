@@ -7,6 +7,7 @@ import Footer from './weather/Footer';
 import CityCondition from './weather/CityCondition';
 import WeatherChannel from './weather/WeatherChannel';
 
+
 class App extends Component {
   render() {
     return (
