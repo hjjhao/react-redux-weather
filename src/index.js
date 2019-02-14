@@ -8,7 +8,6 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 const store = createStore(reducers);
 ReactDOM.render(
-    console.log(this.state),
     <Provider store={store}>
         <App />
     </Provider>,
